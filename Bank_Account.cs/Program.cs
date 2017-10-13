@@ -10,6 +10,12 @@ namespace Bank_Account.cs
     {
         static void Main(string[] args)
         {
+
+            Client client = new Client("Joe", 234445, "1022 hospital ave");
+
+            client.ClientInfo();
+       
+
         }
     }
 }
