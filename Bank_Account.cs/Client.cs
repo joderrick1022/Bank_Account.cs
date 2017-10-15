@@ -8,18 +8,23 @@ namespace Bank_Account.cs
 {
     class Client:Account
     {
-        private string address;
-        
+        private string accountType;
 
-        //public string Name
-        //{
-        //    get { return this.Name; }
-        //    set { this.Name = value; }
-        //}
-        public string Address
+
+        public string Name
         {
-            get { return this.address; }
-            set { this.address = value; }
+            get { return this.Name; }
+            
+        }
+        public int AccountNumber
+        {
+            
+           get { return this.accountNumber; }
+        }
+
+        public string AccountType
+        {
+            get { return this.accountType; }
         }
 
         public Client()
@@ -27,19 +32,25 @@ namespace Bank_Account.cs
 
         }
 
-        public Client(string name,int accountNumber,string address)
+        public Client(string name,int accountNumber)
         {
             this.name = name;
-            this.accountNumber = accountNumber;
-            this.Address = address;
+            this.accountNumber =accountNumber;
+            this.accountType = accountType;
         }
 
-        public void ClientInfo()
+        public void ClientInfo() // this method is to keep track of client information.
         {
             Console.WriteLine("Name :" + name);
             Console.WriteLine("AccountNumber :" + accountNumber);
-            Console.WriteLine("address :" +  address );
+            Console.WriteLine();
         }
-        
+
+        public override void View()
+        {
+            
+        }
+
+
     }
 }

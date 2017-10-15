@@ -6,42 +6,62 @@ using System.Threading.Tasks;
 
 namespace Bank_Account.cs
 {
-    class Account
+     abstract class Account
     {
         protected string name;
-        public int accountNumber;
-        private double balance;
-        private double checkingAccount;
-        private double savingsAccount;
-        private double withDraw;
-        private double deposit;
+        protected int accountNumber;
+        protected double balance;
+        protected double savingsAccount;
+        protected double withDraw;
+        protected double deposit;        protected double checkingAccount;
+
+        protected string accountType;
+        protected double amountOfMoney;
           
 
 
         public string Name
         {
             get { return this.name; }
-            set { this.name = value; }
+            
         }
 
         public double Balance
         {
             get { return this.balance; }
-            set { this.balance = value; }
+            
         }
 
         public int AccountNumber
         {
             get { return this.accountNumber;}
-            set { this.accountNumber = value; }
+            
         }
 
 
-        public double CheckingAccount
+
+    public double AmmountOfMoney
         {
-            get { return this.checkingAccount; }
+            get { return this.amountOfMoney; }
         }
-        
+
+        public virtual double Deposit(double amountOfMoney)
+        {
+            balance = amountOfMoney + balance;
+            return balance;
+        }
+
+        public virtual double WithDraw(double amountOfMoney)
+        {
+            balance = balance - amountOfMoney;
+            return balance;
+        }
+        public abstract void View();
+
+        public  void Quit(int number)
+        {
+            System.Environment.Exit(5);
+        }
 
 
 
