@@ -16,21 +16,21 @@ namespace Bank_Account.cs
             do
                 
             {
-                Console.WriteLine("Welcome to Golden's Bank");
+                Console.WriteLine("\t\t\tWelcome to Golden's Bank");
                 Console.WriteLine();
                 Console.WriteLine();
 
 
-                Console.WriteLine("Please select which number for the transaction\n you wish to make!! ");
+                Console.WriteLine("\t\t select the number for the transaction\n\t\t you wish to make!! ");
                 Console.WriteLine();
                 Console.WriteLine();
 
 
-                Console.WriteLine(" 1.View Client Information ");
-                Console.WriteLine("2.View Account Balance ");
-                Console.WriteLine("3.Deposit Funds ");
-                Console.WriteLine("4.Withdraw Funds ");
-                Console.WriteLine("5.Exit ");
+                Console.WriteLine("\t1.View Client Information ");
+                Console.WriteLine("\t2.View Account Balance ");
+                Console.WriteLine("\t3.Deposit Funds ");
+                Console.WriteLine("\t4.Withdraw Funds ");
+                Console.WriteLine("\t5.Exit ");
 
                
 
@@ -51,10 +51,10 @@ namespace Bank_Account.cs
                         break;
 
                     case 2:
-                        Console.WriteLine("Please select wich balance you would like to view");
+                        Console.WriteLine("\t\tPlease select wich balance you would like to view");
                         Console.WriteLine();
 
-                        Console.WriteLine("select (A): checking \n select (B) ; Savings");
+                        Console.WriteLine("\t\tselect (A): checking \n \t\tselect (B) : Savings");
                         Console.WriteLine();
 
                         char accountType = char.Parse(Console.ReadLine().ToUpper());
@@ -62,11 +62,11 @@ namespace Bank_Account.cs
                         switch (accountType)
                         {
                             case 'A':
-                                Console.WriteLine("Checkings Blance : $"+checkings.Balance);
+                                Console.WriteLine("\t\tCheckings Blance : $"+checkings.Balance);
                                 break;
 
                             case 'B':
-                                Console.WriteLine("Savings Balance = $"+ savings.Balance);
+                                Console.WriteLine("\t\tSavings Balance = $"+ savings.Balance);
                                 break;
 
 
@@ -81,10 +81,10 @@ namespace Bank_Account.cs
                     case 3:
 
 
-                        Console.WriteLine("Depoist in wich account");
+                        Console.WriteLine("\t\tDepoist in wich account");
                         Console.WriteLine();
 
-                        Console.WriteLine("select (A): checking \n\n select (B) ; Savings");
+                        Console.WriteLine("\t\tselect (A): checking \n\t\tselect (B) : Savings");
                         accountType = char.Parse(Console.ReadLine().ToUpper());
                         Console.WriteLine();
 
@@ -94,29 +94,29 @@ namespace Bank_Account.cs
                         switch (accountType)
                         {
                             case 'A':
-                                Console.WriteLine("Checkings Balance: $" + checkings.Balance);
+                                Console.WriteLine("\t\tCheckings Balance: $" + checkings.Balance);
                                 Console.WriteLine();
 
-                                Console.WriteLine("How much would you like to deposit");
+                                Console.WriteLine("\t\tHow much would you like to deposit");
                                 double depoist = double.Parse(Console.ReadLine());
                                 Console.WriteLine();
 
                                 checkings.Deposit(depoist);
-                                Console.WriteLine("Checkings Balance: $" + checkings.Balance);
+                                Console.WriteLine("\t\tCheckings Balance: $" + checkings.Balance);
 
 
                                 break;
 
                             case 'B':
-                                Console.WriteLine("Savings Balance : $"+ savings.Balance);
+                                Console.WriteLine("\t\tSavings Balance : $"+ savings.Balance);
                                 Console.WriteLine();
 
-                                Console.WriteLine("How much would you like to deposit");
+                                Console.WriteLine("\t\tHow much would you like to deposit");
                                 depoist = double.Parse(Console.ReadLine());
                                 Console.WriteLine();
 
                                 savings.Deposit(depoist);
-                                Console.WriteLine("Savings Balance : $" + savings.Balance);
+                                Console.WriteLine("\t\tSavings Balance : $" + savings.Balance);
 
                                 break;
 
@@ -127,36 +127,37 @@ namespace Bank_Account.cs
                         break;
 
                     case 4:
-                        Console.WriteLine("which account would you like to withdraw from");
-                        Console.WriteLine("select (A): checking \n\n select (B) ; Savings");
+                        Console.WriteLine("\t\twhich account would you like to withdraw from");
+                        Console.WriteLine("\t\tselect (A): checking \n\n\t\t select (B) : Savings");
 
                         accountType = char.Parse(Console.ReadLine().ToUpper());
 
                         switch (accountType)
                         {
                             case 'A':
-                                Console.WriteLine("Checkins Balance = $"+ checkings.Balance);
+                                Console.WriteLine("\t\tCheckins Balance = $"+ checkings.Balance);
                                 Console.WriteLine();
 
-                                Console.WriteLine("How much would you like to Withdraw");
+                                Console.WriteLine("\t\tHow much would you like to Withdraw");
                                 double withDraw = double.Parse(Console.ReadLine());
                                 Console.WriteLine();
 
                                 checkings.WithDraw(withDraw);
-                                Console.WriteLine("Your Checkings Balance is now = $"+ checkings.Balance);
+                                Console.WriteLine("\t\tYour Checkings Balance is now = $"+ checkings.Balance);
                                 break;
 
                             case 'B':
-                                Console.WriteLine("Savins Blance = $"+savings.Balance);
+                                Console.WriteLine("\t\tSavins Blance = $"+savings.Balance);
                                 Console.WriteLine();
 
-                                Console.WriteLine("How much would you like to Withdraw");
+                                Console.WriteLine("\t\tHow much would you like to Withdraw");
                                 withDraw = double.Parse(Console.ReadLine());
                                 Console.WriteLine();
 
 
                                 savings.WithDraw(withDraw);
-                                Console.WriteLine("Your Savings blance = $"+ savings.Balance);
+                                Console.WriteLine("\t\tYour Savings blance = $"+ savings.Balance);
+                                Console.WriteLine();
                                 break;
 
                             default:
@@ -169,10 +170,15 @@ namespace Bank_Account.cs
 
                     case 5:
 
-                        Console.WriteLine("are you sure you would like to Quit");
-                        Console.WriteLine("If NO please press (0)");
-                        Console.WriteLine("if yes press any other number");
+                        Console.WriteLine("\t\tAre you sure you would like to Quit");
+                        Console.WriteLine();
+
+                        Console.WriteLine("\t\tIf NO please press (0)");
+                        Console.WriteLine();
+
+                        Console.WriteLine("\t\tIf yes press any other number");
                         int confirm = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
 
                         
 
