@@ -21,39 +21,35 @@ namespace Bank_Account.cs
             this.minAmount = 50.00;
             this.balance = 400.00;
         }
-        public Savings(int accountNumber,double amountOfMONEY)
+        public Savings(int accountNumber, double amountOfMONEY)
         {
             this.accountNumber = accountNumber;
             this.deposit = amountOfMoney;
-            
+
         }
 
-        public override double  WithDraw(double amountOfMoney)
+        public override double WithDraw(double amountOfMoney)
         {
-            double subtract = balance -= amountOfMoney;
+
+            while (balance - amountOfMoney > minAmount)
+            {
+                double subtract = balance -= amountOfMoney;
+                return balance;
+
+            }
+
+            Console.WriteLine("Your account can not fall below Min Balance!!");
             return balance;
         }
 
-
-                   
-
-
-            
-
-
-
-
-
-
-        
 
         public override void View()
         {
             Console.WriteLine(balance);
         }
 
-        
 
+    
 
     }         
 }

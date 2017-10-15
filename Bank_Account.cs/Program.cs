@@ -10,7 +10,7 @@ namespace Bank_Account.cs
     {
         static void Main(string[] args)
         {
-            //bool moreTransactions = true ;
+            
             int exit = 0;
 
             do
@@ -21,7 +21,7 @@ namespace Bank_Account.cs
                 Console.WriteLine();
 
 
-                Console.WriteLine("Please select which number for the transactin\n you wish to make!! ");
+                Console.WriteLine("Please select which number for the transaction\n you wish to make!! ");
                 Console.WriteLine();
                 Console.WriteLine();
 
@@ -52,18 +52,21 @@ namespace Bank_Account.cs
 
                     case 2:
                         Console.WriteLine("Please select wich balance you would like to view");
+                        Console.WriteLine();
+
                         Console.WriteLine("select (A): checking \n select (B) ; Savings");
+                        Console.WriteLine();
 
                         char accountType = char.Parse(Console.ReadLine().ToUpper());
 
                         switch (accountType)
                         {
                             case 'A':
-                                Console.WriteLine(checkings.Balance);
+                                Console.WriteLine("Checkings Blance : $"+checkings.Balance);
                                 break;
 
                             case 'B':
-                                Console.WriteLine(savings.Balance);
+                                Console.WriteLine("Savings Balance = $"+ savings.Balance);
                                 break;
 
 
@@ -79,26 +82,42 @@ namespace Bank_Account.cs
 
 
                         Console.WriteLine("Depoist in wich account");
-                        Console.WriteLine("select (A): checking \n select (B) ; Savings");
+                        Console.WriteLine();
+
+                        Console.WriteLine("select (A): checking \n\n select (B) ; Savings");
                         accountType = char.Parse(Console.ReadLine().ToUpper());
+                        Console.WriteLine();
+
 
 
 
                         switch (accountType)
                         {
                             case 'A':
-                                Console.WriteLine(checkings.Balance);
+                                Console.WriteLine("Checkings Balance: $" + checkings.Balance);
+                                Console.WriteLine();
+
                                 Console.WriteLine("How much would you like to deposit");
                                 double depoist = double.Parse(Console.ReadLine());
+                                Console.WriteLine();
+
                                 checkings.Deposit(depoist);
+                                Console.WriteLine("Checkings Balance: $" + checkings.Balance);
+
 
                                 break;
 
                             case 'B':
-                                Console.WriteLine(savings.Balance);
+                                Console.WriteLine("Savings Balance : $"+ savings.Balance);
+                                Console.WriteLine();
+
                                 Console.WriteLine("How much would you like to deposit");
                                 depoist = double.Parse(Console.ReadLine());
+                                Console.WriteLine();
+
                                 savings.Deposit(depoist);
+                                Console.WriteLine("Savings Balance : $" + savings.Balance);
+
                                 break;
 
 
@@ -116,17 +135,28 @@ namespace Bank_Account.cs
                         switch (accountType)
                         {
                             case 'A':
-                                Console.WriteLine(checkings.Balance);
+                                Console.WriteLine("Checkins Balance = $"+ checkings.Balance);
+                                Console.WriteLine();
+
                                 Console.WriteLine("How much would you like to Withdraw");
                                 double withDraw = double.Parse(Console.ReadLine());
+                                Console.WriteLine();
+
                                 checkings.WithDraw(withDraw);
+                                Console.WriteLine("Your Checkings Balance is now = $"+ checkings.Balance);
                                 break;
 
                             case 'B':
-                                Console.WriteLine(savings.Balance);
+                                Console.WriteLine("Savins Blance = $"+savings.Balance);
+                                Console.WriteLine();
+
                                 Console.WriteLine("How much would you like to Withdraw");
                                 withDraw = double.Parse(Console.ReadLine());
+                                Console.WriteLine();
+
+
                                 savings.WithDraw(withDraw);
+                                Console.WriteLine("Your Savings blance = $"+ savings.Balance);
                                 break;
 
                             default:
@@ -162,10 +192,6 @@ namespace Bank_Account.cs
                 }
 
 
-
-
-
-                
 
 
 
