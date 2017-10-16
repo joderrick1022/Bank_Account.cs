@@ -9,14 +9,14 @@ namespace Bank_Account.cs
      abstract class Account
     {
         protected string name;
-        protected int accountNumber;
+        protected int accountNumber;  
         protected double balance;
-        protected double savingsAccount;
+        protected double savingsAccount;//fields
         protected double withDraw;
-        protected double deposit;        protected double checkingAccount;
-
+        protected double deposit;
+        protected double checkingAccount;
         protected string accountType;
-        protected double amountOfMoney;
+        protected double amountOfMoney;// this will take users input 
           
 
 
@@ -47,7 +47,7 @@ namespace Bank_Account.cs
 
         public virtual double Deposit(double amountOfMoney)
         {
-            balance = amountOfMoney + balance;
+            balance = amountOfMoney + balance;//created this method so that all accounts could use method
             return balance;
         }
 
@@ -56,12 +56,11 @@ namespace Bank_Account.cs
             balance = balance - amountOfMoney;
             return balance;
         }
-        public abstract void View();
 
-        public  void Quit(int number)
-        {
-            System.Environment.Exit(5);
-        }
+
+        public abstract void View(); //this method is abstract so I can view balance's in each account.
+
+     
 
 
 
