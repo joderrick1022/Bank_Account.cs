@@ -14,16 +14,16 @@ namespace Bank_Account.cs
 
 
 
-        public double  CheckingAccountBalance
+        public double  CheckingAccountBalance 
         {
             get { return this.checkingsAccountBalance; }
-            
+           
         }
 
 
-        public Checking()
+        public Checking()  
         {
-            this.balance = 2500.00;
+            this.balance = 2500.00; //this amount was  hardcoded in so I have some money to work with
         }
 
         public Checking(int accountNumber,string name)
@@ -43,7 +43,7 @@ namespace Bank_Account.cs
         }
 
 
-        public override double WithDraw(double amountOfMoney)
+        public override double WithDraw(double amountOfMoney)  // this method is used among all accounts.
         {
            double subtract = balance -= amountOfMoney;
             return balance;
