@@ -8,15 +8,15 @@ namespace Bank_Account.cs
 {
     class Savings : Account
     {
-        private double minAmount;
+        private double minAmount; //this is for my minimum balance
 
-        public double MinAnount
+        public double MinAnount // property of the consytructor
         {
 
             get { return this.minAmount; }
         }
 
-        public Savings()
+        public Savings() 
         {
             this.minAmount = 50.00;
             this.balance = 400.00;
@@ -31,7 +31,8 @@ namespace Bank_Account.cs
         public override double WithDraw(double amountOfMoney)
         {
 
-            while (balance - amountOfMoney > minAmount)
+            while (balance - amountOfMoney > minAmount)  // this while loop is to check and make sure my 
+                                                         // my withdraw does not put my account under min balance.
             {
                 double subtract = balance -= amountOfMoney;
                 return balance;
@@ -43,7 +44,7 @@ namespace Bank_Account.cs
         }
 
 
-        public override void View()
+        public override void View()   
         {
             Console.WriteLine(balance);
         }

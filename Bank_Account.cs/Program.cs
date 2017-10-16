@@ -11,12 +11,13 @@ namespace Bank_Account.cs
         static void Main(string[] args)
         {
             
-            int exit = 0;
+            int exit = 0; // this int is to exit do while loop
 
-            do
-                
+            do                 // this app is hard coded with client Name and number.
+
             {
-                Console.WriteLine("\t\t\tWelcome to Golden's Bank");
+                Console.WriteLine();
+                Console.WriteLine("\t\t\tWelcome to Golden Bank");
                 Console.WriteLine();
                 Console.WriteLine();
 
@@ -28,26 +29,26 @@ namespace Bank_Account.cs
 
                 Console.WriteLine("\t1.View Client Information ");
                 Console.WriteLine("\t2.View Account Balance ");
-                Console.WriteLine("\t3.Deposit Funds ");
+                Console.WriteLine("\t3.Deposit Funds ");          //prompt user with questions
                 Console.WriteLine("\t4.Withdraw Funds ");
                 Console.WriteLine("\t5.Exit ");
 
                
 
                 Client client = new Client("Joderrick Golden ", 06231022);
-                Checking checkings = new Checking();
-                Savings savings = new Savings();
+                Checking checkings = new Checking();    //I hard coded info in so that my main menu screen had what directions specified
+                Savings savings = new Savings(); 
 
 
 
 
-                int clientChoice = int.Parse(Console.ReadLine());
+                int clientChoice = int.Parse(Console.ReadLine()); // this is to get user input through my switch statements
 
 
                 switch (clientChoice)
                 {
                     case 1:
-                        client.ClientInfo();
+                        client.ClientInfo();  //all cases are representing choices 1-5 on menu screen.
                         break;
 
                     case 2:
@@ -57,7 +58,7 @@ namespace Bank_Account.cs
                         Console.WriteLine("\t\tselect (A): checking \n \t\tselect (B) : Savings");
                         Console.WriteLine();
 
-                        char accountType = char.Parse(Console.ReadLine().ToUpper());
+                        char accountType = char.Parse(Console.ReadLine().ToUpper());//made sure I changed evrything to upper based on client error
 
                         switch (accountType)
                         {
@@ -97,7 +98,7 @@ namespace Bank_Account.cs
                                 Console.WriteLine("\t\tCheckings Balance: $" + checkings.Balance);
                                 Console.WriteLine();
 
-                                Console.WriteLine("\t\tHow much would you like to deposit");
+                                Console.WriteLine("\t\tHow much would you like to deposit?");
                                 double depoist = double.Parse(Console.ReadLine());
                                 Console.WriteLine();
 
@@ -111,7 +112,7 @@ namespace Bank_Account.cs
                                 Console.WriteLine("\t\tSavings Balance : $"+ savings.Balance);
                                 Console.WriteLine();
 
-                                Console.WriteLine("\t\tHow much would you like to deposit");
+                                Console.WriteLine("\t\tHow much would you like to deposit?");
                                 depoist = double.Parse(Console.ReadLine());
                                 Console.WriteLine();
 
@@ -127,10 +128,10 @@ namespace Bank_Account.cs
                         break;
 
                     case 4:
-                        Console.WriteLine("\t\twhich account would you like to withdraw from");
+                        Console.WriteLine("\t\tWhich account would you like to withdraw from?");
                         Console.WriteLine("\t\tselect (A): checking \n\n\t\t select (B) : Savings");
 
-                        accountType = char.Parse(Console.ReadLine().ToUpper());
+                        accountType = char.Parse(Console.ReadLine().ToUpper()); // made this up so that it can accept a char
 
                         switch (accountType)
                         {
@@ -138,7 +139,7 @@ namespace Bank_Account.cs
                                 Console.WriteLine("\t\tCheckins Balance = $"+ checkings.Balance);
                                 Console.WriteLine();
 
-                                Console.WriteLine("\t\tHow much would you like to Withdraw");
+                                Console.WriteLine("\t\tHow much would you like to Withdraw?");
                                 double withDraw = double.Parse(Console.ReadLine());
                                 Console.WriteLine();
 
@@ -150,7 +151,7 @@ namespace Bank_Account.cs
                                 Console.WriteLine("\t\tSavins Blance = $"+savings.Balance);
                                 Console.WriteLine();
 
-                                Console.WriteLine("\t\tHow much would you like to Withdraw");
+                                Console.WriteLine("\t\tHow much would you like to Withdraw?");
                                 withDraw = double.Parse(Console.ReadLine());
                                 Console.WriteLine();
 
@@ -170,14 +171,14 @@ namespace Bank_Account.cs
 
                     case 5:
 
-                        Console.WriteLine("\t\tAre you sure you would like to Quit");
+                        Console.WriteLine("\t\tAre you sure you would like to Exit?");
                         Console.WriteLine();
 
                         Console.WriteLine("\t\tIf NO please press (0)");
                         Console.WriteLine();
 
                         Console.WriteLine("\t\tIf yes press any other number");
-                        int confirm = int.Parse(Console.ReadLine());
+                        int confirm = int.Parse(Console.ReadLine());//I made this up for user input based on if they wanted to quit or not
                         Console.WriteLine();
 
                         
@@ -187,7 +188,7 @@ namespace Bank_Account.cs
                         
 
 
-                        exit = confirm;
+                        exit = confirm; // this will stop the app if needed
 
                         
                         break;

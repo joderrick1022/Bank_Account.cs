@@ -23,7 +23,7 @@ namespace Bank_Account.cs
         public string Name
         {
             get { return this.name; }
-            
+                                                 //setting  properties for abstract class
         }
 
         public double Balance
